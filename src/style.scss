@@ -5,6 +5,7 @@ a {
 
 .loader {
   align-items: center;
+  animation-delay: 3s;
   background: #fdf1db;
   display: flex;
   height: 100vh;
@@ -21,13 +22,22 @@ a {
   background: #060709;
   font-family: 'Dosis', sans-serif;
   font-size: 20px;
+  overflow: hidden;
+
+  &-background {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
 
   &-section {
     align-items: center;
     color: whitesmoke;
     display: flex;
-    justify-content: center;
     height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
     width: 100%;
 
     &-column {
@@ -44,7 +54,7 @@ a {
       border: 1px solid green;
       cursor: pointer;
       display: flex;
-      margin: 0 40px;
+      margin: 0 10px;
       padding: 10px 20px 10px 10px;
       transition: background 200ms;
 
@@ -78,11 +88,11 @@ a {
           &-title {
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 26px;
+            font-size: 24px;
           }
 
           &-description {
-            font-size: 16px;
+            font-size: 14px;
             letter-spacing: 1px;
             font-style: italic;
           }
