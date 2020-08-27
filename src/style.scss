@@ -1,0 +1,93 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.loader {
+  align-items: center;
+  background: #fdf1db;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  width: 100vw;
+
+  img {
+    width: 200px;
+  }
+}
+
+.app {
+  background: #060709;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+
+  &-section {
+    align-items: center;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+
+    &-column {
+      flex-direction: column;
+    }
+
+    &-description {
+      letter-spacing: 2px;
+    }
+
+    &-contact {
+      align-items: center;
+      border-radius: 8px;
+      border: 1px solid green;
+      cursor: pointer;
+      display: flex;
+      margin: 0 40px;
+      padding: 10px 20px 10px 10px;
+      transition: background 200ms;
+
+      &:hover {
+        background: rgba(green, 0.3);
+        transition: background 200ms;
+      }
+      img {
+        width: 50px;
+      }
+    }
+
+    &-menu {
+      font-weight: 200;
+      padding: 0 20px;
+      text-align: right;
+
+      &-title {
+        font-size: 50px;
+        padding-bottom: 30px;
+      }
+
+      &-content {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        &-menu {
+          margin-bottom: 10px;
+
+          &-title {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 26px;
+          }
+
+          &-description {
+            font-size: 16px;
+            letter-spacing: 1px;
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+}
