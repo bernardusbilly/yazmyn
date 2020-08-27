@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d382161d4f55cd7c620d59e6b5d2266f",
+    "revision": "41a365c79b0fee54fd51a5fb66655c95",
     "url": "/lebaeker/index.html"
   },
   {
-    "revision": "a02866b836e82d35cf01",
-    "url": "/lebaeker/static/css/main.d0430e3f.chunk.css"
+    "revision": "50ed3e1470f7fc02cb4b",
+    "url": "/lebaeker/static/css/main.f03cb95f.chunk.css"
   },
   {
     "revision": "891d3e46982bc7d2a905",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lebaeker/static/js/2.67952fbc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a02866b836e82d35cf01",
-    "url": "/lebaeker/static/js/main.2bb0ed5a.chunk.js"
+    "revision": "50ed3e1470f7fc02cb4b",
+    "url": "/lebaeker/static/js/main.9b421530.chunk.js"
   },
   {
     "revision": "74ad1f33160fbc1948e9",
