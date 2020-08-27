@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/lebaeker/static/css/main.1cd941b9.chunk.css",
-    "main.js": "/lebaeker/static/js/main.f7c11ed8.chunk.js",
-    "main.js.map": "/lebaeker/static/js/main.f7c11ed8.chunk.js.map",
+    "main.css": "/lebaeker/static/css/main.7fc7e970.chunk.css",
+    "main.js": "/lebaeker/static/js/main.aa9d1cdd.chunk.js",
+    "main.js.map": "/lebaeker/static/js/main.aa9d1cdd.chunk.js.map",
     "runtime-main.js": "/lebaeker/static/js/runtime-main.dc904535.js",
     "runtime-main.js.map": "/lebaeker/static/js/runtime-main.dc904535.js.map",
     "static/js/2.67952fbc.chunk.js": "/lebaeker/static/js/2.67952fbc.chunk.js",
     "static/js/2.67952fbc.chunk.js.map": "/lebaeker/static/js/2.67952fbc.chunk.js.map",
     "index.html": "/lebaeker/index.html",
-    "precache-manifest.8269288fe2da3c77cefb9f3be65d79cb.js": "/lebaeker/precache-manifest.8269288fe2da3c77cefb9f3be65d79cb.js",
+    "precache-manifest.5fb58eecd5b77a0260cf1849992c0996.js": "/lebaeker/precache-manifest.5fb58eecd5b77a0260cf1849992c0996.js",
     "service-worker.js": "/lebaeker/service-worker.js",
-    "static/css/main.1cd941b9.chunk.css.map": "/lebaeker/static/css/main.1cd941b9.chunk.css.map",
+    "static/css/main.7fc7e970.chunk.css.map": "/lebaeker/static/css/main.7fc7e970.chunk.css.map",
     "static/js/2.67952fbc.chunk.js.LICENSE.txt": "/lebaeker/static/js/2.67952fbc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.dc904535.js",
     "static/js/2.67952fbc.chunk.js",
-    "static/css/main.1cd941b9.chunk.css",
-    "static/js/main.f7c11ed8.chunk.js"
+    "static/css/main.7fc7e970.chunk.css",
+    "static/js/main.aa9d1cdd.chunk.js"
   ]
 }
