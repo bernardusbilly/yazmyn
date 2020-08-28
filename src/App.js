@@ -28,6 +28,8 @@ const menus = [
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [cookiesClick, setCookiesClick] = useState(0);
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
@@ -50,8 +52,14 @@ function App() {
           className="app-section-logo"
           src={`${process.env.PUBLIC_URL}/logo.png`}
         />
+        <EasterEgg click={cookiesClick} />
         <div className="app-section-description animate__animated animate__slideInUp">
-          <span className="app-section-description-cookie">Cookies</span> |{' '}
+          <span
+            className="app-section-description-cookie"
+            onClick={() => setCookiesClick(cookiesClick + 1)}>
+            Cookies
+          </span>{' '}
+          |{' '}
           <span className="app-section-description-madeleine">Madeleines</span>
         </div>
       </div>
@@ -109,6 +117,33 @@ function App() {
           <i className="fa fa-github"></i>
         </a>
       </div>
+    </div>
+  );
+}
+
+function EasterEgg({ click = 0 }) {
+  let message = '';
+
+  if (click > 60) {
+    message =
+      'Fine, now post your finding with #baekerFindCookies on your instagram! :)';
+  } else if (click > 50) {
+    message = 'Why are you still clicking this?';
+  } else if (click > 30) {
+    message = 'Fine.. you have found the easter egg!';
+  } else if (click > 20) {
+    message = "Wow, you love cookies, don't  you!?";
+  } else if (click > 10) {
+    message = 'Seems like you like cookies a lot!';
+  } else {
+    message = '';
+  }
+
+  return (
+    <div
+      className="app-easteregg animate__animated animate__bounceIn"
+      key={message}>
+      {message}
     </div>
   );
 }

@@ -29,6 +29,10 @@ body {
   font-weight: 100;
   overflow: hidden;
 
+  &-easteregg {
+    margin-bottom: 10px;
+  }
+
   &-background {
     background-position: center;
     background-repeat: no-repeat;
