@@ -31,7 +31,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 4000);
   });
 
   return loading ? (
@@ -45,9 +45,14 @@ function App() {
   ) : (
     <div className="app animate__animated animate__fadeIn">
       <div className="app-section app-section-column">
-        <img alt="logo" src={`${process.env.PUBLIC_URL}/logo.jpg`} />
+        <img
+          alt="logo"
+          className="app-section-logo"
+          src={`${process.env.PUBLIC_URL}/logo.png`}
+        />
         <div className="app-section-description animate__animated animate__slideInUp">
-          Cookies | Madeleines
+          <span className="app-section-description-cookie">Cookies</span> |{' '}
+          <span className="app-section-description-madeleine">Madeleines</span>
         </div>
       </div>
       <div
@@ -56,19 +61,27 @@ function App() {
           background: 'rgba(0, 0, 0, 0.8)',
           justifyContent: 'space-around',
         }}>
-        <img
+        <div
           alt="background"
           className="app-background"
-          src={`${process.env.PUBLIC_URL}/bg.jpeg`}
+          style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/bg.jpeg)` }}
         />
-        <a
-          className="app-section-contact"
-          href="https://wa.me/+6287820223402?text=Please+fill+out+the+order+form+below%3A%0D%0A%0D%0A+Name%3A%0D%0A%0D%0A+Phone%3A%0D%0A%0D%0A+Address%3A%0D%0A%0D%0A+Order%3A%0D%0A%0D%0A+Delivery+Date%3A%0D%0A%0D%0A+Notes%2FRequests%3A%0D%0A%0D%0A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A)&rlz=1C5CHFA_enUS834US834&oq=Please+fill+out+the+order+form+below%3A+Name%3A+Phone%3A+Address%3A+Order%3A+Delivery+Date%3A+Notes%2FRequests%3A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A"
-          rel="noopener noreferrer"
-          target="_blank">
-          <img alt="whatsapp" src={`${process.env.PUBLIC_URL}/wa-logo.png`} />
-          Order here via WhatsApp
-        </a>
+        <div className="app-section-socmed">
+          <a
+            className="app-section-socmed-wa"
+            href="https://wa.me/+6287820223402?text=Please+fill+out+the+order+form+below%3A%0D%0A%0D%0A+Name%3A%0D%0A%0D%0A+Phone%3A%0D%0A%0D%0A+Address%3A%0D%0A%0D%0A+Order%3A%0D%0A%0D%0A+Delivery+Date%3A%0D%0A%0D%0A+Notes%2FRequests%3A%0D%0A%0D%0A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A)&rlz=1C5CHFA_enUS834US834&oq=Please+fill+out+the+order+form+below%3A+Name%3A+Phone%3A+Address%3A+Order%3A+Delivery+Date%3A+Notes%2FRequests%3A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A"
+            rel="noopener noreferrer"
+            target="_blank">
+            <i className="fa fa-whatsapp"></i> Order here via WhatsApp
+          </a>
+          <a
+            className="app-section-socmed-ig"
+            href="https://instagram.com/le.baeker"
+            rel="noopener noreferrer"
+            target="_blank">
+            <i className="fa fa-instagram"></i> Follow us on Instagram
+          </a>
+        </div>
         <div className="app-section-menu">
           <div className="app-section-menu-title">Menu</div>
           <ul className="app-section-menu-content">
@@ -86,6 +99,15 @@ function App() {
             })}
           </ul>
         </div>
+      </div>
+      <div className="app-footer">
+        &copy; Copyright 2020 |{' '}
+        <a
+          href="https://github.com/bernardusbilly"
+          rel="noopener noreferrer"
+          target="_blank">
+          <i className="fa fa-github"></i>
+        </a>
       </div>
     </div>
   );
