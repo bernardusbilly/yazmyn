@@ -74,11 +74,23 @@ body {
       }
     }
 
-    &-socmed {
+    &-order {
       align-items: center;
       display: flex;
       flex-direction: column;
 
+      &-form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+          background: transparent;
+          border: 1px solid gray;
+        }
+      }
+    }
+
+    &-socmed {
       .fa {
         font-size: 20px;
         margin-right: 6px;

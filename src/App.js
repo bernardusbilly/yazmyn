@@ -28,6 +28,7 @@ const menus = [
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [showForm, setShowForm] = useState(false);
   const [cookiesClick, setCookiesClick] = useState(0);
 
   useEffect(() => {
@@ -74,7 +75,22 @@ function App() {
           className="app-background"
           style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/bg.jpeg)` }}
         />
-        <div className="app-section-socmed">
+        <div className="app-section-order">
+          <span onClick={() => setShowForm(true)}>Order now</span>
+          {showForm && (
+            <div className="app-section-order-form">
+              <label for="name">Name:</label>
+              <input type="text" id="name" />
+              <label for="phone">Phone:</label>
+              <input type="text" id="phone" />
+              <label for="address">Address:</label>
+              <input type="textarea" id="address" />
+              <label for="name">Delivery Date:</label>
+              <input type="text" id="delivery date" />
+              <label for="name">Notes:</label>
+              <input type="text" id="notes" />
+            </div>
+          )}
           <a
             className="app-section-socmed-wa"
             href="https://wa.me/+6287820223402?text=Please+fill+out+the+order+form+below%3A%0D%0A%0D%0A+Name%3A%0D%0A%0D%0A+Phone%3A%0D%0A%0D%0A+Address%3A%0D%0A%0D%0A+Order%3A%0D%0A%0D%0A+Delivery+Date%3A%0D%0A%0D%0A+Notes%2FRequests%3A%0D%0A%0D%0A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A)&rlz=1C5CHFA_enUS834US834&oq=Please+fill+out+the+order+form+below%3A+Name%3A+Phone%3A+Address%3A+Order%3A+Delivery+Date%3A+Notes%2FRequests%3A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A"
