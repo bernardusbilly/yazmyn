@@ -45,9 +45,11 @@ function App() {
     setForm(newFormEntry);
   };
 
-  const handleOrder = () => {
-    setShowForm(false);
-    setForm({});
+  const handleResetOrder = () => {
+    setTimeout(() => {
+      setShowForm(false);
+      setForm({});
+    });
   };
 
   return loading ? (
@@ -137,7 +139,7 @@ function App() {
             }%0D%0D+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A)&rlz=1C5CHFA_enUS834US834&oq=Please+fill+out+the+order+form+below%3A+Name%3A+Phone%3A+Address%3A+Order%3A+Delivery+Date%3A+Notes%2FRequests%3A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A`}
             rel="noopener noreferrer"
             target="_blank"
-            onClick={handleOrder}>
+            onClick={handleResetOrder}>
             <i className="fa fa-whatsapp"></i> Order here via WhatsApp
           </a>
           <a
