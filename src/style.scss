@@ -79,23 +79,45 @@ body {
       display: flex;
       flex-direction: column;
 
-      &-form {
-        display: flex;
-        flex-direction: column;
-
-        input {
-          background: transparent;
-          border: 1px solid gray;
-        }
-      }
-    }
-
-    &-socmed {
       .fa {
         font-size: 20px;
         margin-right: 6px;
       }
 
+      &-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+
+        & > div {
+          align-items: center;
+          display: flex;
+          justify-content: space-around;
+        }
+
+        label {
+          min-width: 110px;
+          padding-right: 10px;
+          text-align: right;
+        }
+
+        input {
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid gray;
+          color: white;
+          padding: 8px 4px;
+          width: 100%;
+
+          &:focus {
+            border-color: white;
+            outline: none;
+          }
+        }
+      }
+    }
+
+    &-socmed {
       &-wa {
         align-items: center;
         border-radius: 8px;

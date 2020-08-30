@@ -30,12 +30,25 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [cookiesClick, setCookiesClick] = useState(0);
+  const [form, setForm] = useState({});
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 4000);
   });
+
+  const handleFormChange = (event) => {
+    const newFormEntry = JSON.parse(JSON.stringify(form));
+    const { id, value } = event.target;
+    newFormEntry[id] = value;
+    setForm(newFormEntry);
+  };
+
+  const handleOrder = () => {
+    setShowForm(false);
+    setForm({});
+  };
 
   return loading ? (
     <div className="loader animate__animated animate__fadeOut">
@@ -76,26 +89,55 @@ function App() {
           style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/bg.jpeg)` }}
         />
         <div className="app-section-order">
-          <span onClick={() => setShowForm(true)}>Order now</span>
+          <span style={{ cursor: 'pointer' }} onClick={() => setShowForm(true)}>
+            Order now
+          </span>
           {showForm && (
             <div className="app-section-order-form">
-              <label for="name">Name:</label>
-              <input type="text" id="name" />
-              <label for="phone">Phone:</label>
-              <input type="text" id="phone" />
-              <label for="address">Address:</label>
-              <input type="textarea" id="address" />
-              <label for="name">Delivery Date:</label>
-              <input type="text" id="delivery date" />
-              <label for="name">Notes:</label>
-              <input type="text" id="notes" />
+              <div>
+                <label htmlFor="name">Name:</label>
+                <input type="text" id="name" onChange={handleFormChange} />
+              </div>
+              <div>
+                <label htmlFor="phone">Phone:</label>
+                <input type="text" id="phone" onChange={handleFormChange} />
+              </div>
+              <div>
+                <label htmlFor="address">Address:</label>
+                <input
+                  type="textarea"
+                  id="address"
+                  onChange={handleFormChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="name">Delivery Date:</label>
+                <input
+                  type="text"
+                  id="delivery date"
+                  onChange={handleFormChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="name">Notes:</label>
+                <input type="text" id="notes" onChange={handleFormChange} />
+              </div>
             </div>
           )}
           <a
             className="app-section-socmed-wa"
-            href="https://wa.me/+6287820223402?text=Please+fill+out+the+order+form+below%3A%0D%0A%0D%0A+Name%3A%0D%0A%0D%0A+Phone%3A%0D%0A%0D%0A+Address%3A%0D%0A%0D%0A+Order%3A%0D%0A%0D%0A+Delivery+Date%3A%0D%0A%0D%0A+Notes%2FRequests%3A%0D%0A%0D%0A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A)&rlz=1C5CHFA_enUS834US834&oq=Please+fill+out+the+order+form+below%3A+Name%3A+Phone%3A+Address%3A+Order%3A+Delivery+Date%3A+Notes%2FRequests%3A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A"
+            href={`https://wa.me/+6287820223402?text=Please+fill+out+the+order+form+below%3A%0D%0D+Name%3A${
+              form.name || ''
+            }%0D%0D+Phone%3A${form.phone || ''}%0D%0D+Address%3A${
+              form.address || ''
+            }%0D%0D+Order%3A${form.order || ''}%0D%0D+Delivery+Date%3A${
+              form.delivery || ''
+            }%0D%0D+Notes%2FRequests%3A${
+              form.notes || ''
+            }%0D%0D+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A)&rlz=1C5CHFA_enUS834US834&oq=Please+fill+out+the+order+form+below%3A+Name%3A+Phone%3A+Address%3A+Order%3A+Delivery+Date%3A+Notes%2FRequests%3A+Thank+you+for+completing+the+order+form!+Please+hang+tight+while+we+input+your+order+%3A`}
             rel="noopener noreferrer"
-            target="_blank">
+            target="_blank"
+            onClick={handleOrder}>
             <i className="fa fa-whatsapp"></i> Order here via WhatsApp
           </a>
           <a
