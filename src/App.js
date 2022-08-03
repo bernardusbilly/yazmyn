@@ -10,13 +10,13 @@ function Codi({ x = 0, y = 0 }) {
 }
 
 function App() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [codis, setCodis] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 2000);
   });
 
   const handleAddCodi = (event) => {
