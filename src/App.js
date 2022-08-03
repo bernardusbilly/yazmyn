@@ -1,36 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 
-const menus = [
-  {
-    title: '15 Mini Mads',
-    description: 'lightly sweet and fluffy vanilla mini madeleines',
-  },
-  {
-    title: '15 Mini Pandan Mads',
-    description: 'lightly sweet and fluffy pandan mini madeleines',
-  },
-  {
-    title: '15 Mini Coffee Mads',
-    description: 'fragrant coffee flavor but same fluffiness',
-  },
-  {
-    title: '5 Dark Cookies',
-    description:
-      'a little crispy on the outside and chewy on the inside dark chocolate chip cookies',
-  },
-  {
-    title: '5 Milk Cookies',
-    description:
-      'a little crispy on the outside and chewy on the inside milk chocolate chip cookies',
-  },
-];
+function Codi({ x = 0, y = 0 }) {
+  return <img
+    alt="loading"
+    className="loader-spin"
+    src={`${process.env.PUBLIC_URL}/codi.gif`}
+  />
+}
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const [showForm, setShowForm] = useState(false);
-  const [cookiesClick, setCookiesClick] = useState(0);
-  const [form, setForm] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [codis, setCodis] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -38,18 +19,11 @@ function App() {
     }, 4000);
   });
 
-  const handleFormChange = (event) => {
-    const newFormEntry = JSON.parse(JSON.stringify(form));
-    const { id, value } = event.target;
-    newFormEntry[id] = value;
-    setForm(newFormEntry);
-  };
-
-  const handleResetOrder = () => {
-    setTimeout(() => {
-      setShowForm(false);
-      setForm({});
-    });
+  const handleAddCodi = (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+    console.log(x,y);
+    setCodis([...codis, {x,y}]);
   };
 
   return loading ? (
@@ -57,17 +31,53 @@ function App() {
       <img
         alt="loading"
         className="loader-spin"
-        src={`${process.env.PUBLIC_URL}/jett-valorant.gif`}
+        src={`${process.env.PUBLIC_URL}/codi.gif`}
+      />
+      <img
+        alt="loading"
+        className="loader-spin"
+        src={`${process.env.PUBLIC_URL}/codi.gif`}
+      />
+      <img
+        alt="loading"
+        className="loader-spin"
+        src={`${process.env.PUBLIC_URL}/codi.gif`}
       />
     </div>
   ) : (
     <div className="app animate__animated animate__fadeIn">
-      <div className="app-section">
-        <img
-          alt="logo"
-          className="app-section-logo"
-          src={`${process.env.PUBLIC_URL}/yazmyn.jpeg`}
-        />
+      <div className="app-section" onClick={handleAddCodi}>
+        {codis.map(({ x = 0, y = 0 }) => {
+          return <img
+            alt="codi"
+            className='app-section-codi'
+            src={`${process.env.PUBLIC_URL}/codi.gif`}
+            style={{ position: "absolute", left: x-25, top: y-25 }}
+          />;
+        })}
+        <div className="app-section-name">
+          yazmyn
+        </div>
+        <div className="app-section-info">
+          (click anywhere to place codi)
+        </div>
+        <div className="flex space-x-4">
+          <a href='https://www.twitch.tv/yazmyn' target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitch"></i>
+          </a>
+          <a href='https://twitter.com/yazmynFPS' target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a href='https://www.youtube.com/c/yazmynFPS' target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href='https://www.instagram.com/yazmynlol/' target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href='https://www.tiktok.com/@yazmynfps' target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -18,7 +18,7 @@ body {
   width: 100vw;
 
   img {
-    width: 100%;
+    width: 50px;
   }
 }
 
@@ -47,14 +47,25 @@ body {
     align-items: center;
     color: whitesmoke;
     display: flex;
+    flex-flow: column;
     height: 100vh;
     justify-content: center;
     overflow: hidden;
     position: relative;
     width: 100%;
 
-    &-logo {
-      width: 100%;
+    &-name {
+      cursor: pointer;
+      font-size: 30px;
+    }
+
+    &-info {
+      font-size: 10px;
+      margin-bottom: 16px;
+    }
+
+    &-codi {
+      width: 50px;
     }
 
     &-column {
