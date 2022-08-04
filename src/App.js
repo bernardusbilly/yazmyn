@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './style.scss';
 
-function Codi({ x = 0, y = 0 }) {
-  return <img
-    alt="loading"
-    className="loader-spin"
-    src={`${process.env.PUBLIC_URL}/codi.gif`}
-  />
-}
-
 function App() {
   const [loading, setLoading] = useState(true);
-  const [codis, setCodis] = useState([]);
+  const [kodis, setKodis] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,11 +11,11 @@ function App() {
     }, 2000);
   });
 
-  const handleAddCodi = (event) => {
+  const handleAddKodi = (event) => {
     const x = event.clientX;
     const y = event.clientY;
     console.log(x,y);
-    setCodis([...codis, {x,y}]);
+    setKodis([...kodis, {x,y}]);
   };
 
   return loading ? (
@@ -31,27 +23,27 @@ function App() {
       <img
         alt="loading"
         className="loader-spin"
-        src={`${process.env.PUBLIC_URL}/codi.gif`}
+        src={`${process.env.PUBLIC_URL}/kodi.gif`}
       />
       <img
         alt="loading"
         className="loader-spin"
-        src={`${process.env.PUBLIC_URL}/codi.gif`}
+        src={`${process.env.PUBLIC_URL}/kodi.gif`}
       />
       <img
         alt="loading"
         className="loader-spin"
-        src={`${process.env.PUBLIC_URL}/codi.gif`}
+        src={`${process.env.PUBLIC_URL}/kodi.gif`}
       />
     </div>
   ) : (
     <div className="app animate__animated animate__fadeIn">
-      <div className="app-section" onClick={handleAddCodi}>
-        {codis.map(({ x = 0, y = 0 }) => {
+      <div className="app-section" onClick={handleAddKodi}>
+        {kodis.map(({ x = 0, y = 0 }) => {
           return <img
-            alt="codi"
-            className='app-section-codi'
-            src={`${process.env.PUBLIC_URL}/codi.gif`}
+            alt="kodi"
+            className='app-section-kodi'
+            src={`${process.env.PUBLIC_URL}/kodi.gif`}
             style={{ position: "absolute", left: x-25, top: y-25 }}
           />;
         })}
@@ -59,7 +51,7 @@ function App() {
           yazmyn
         </div>
         <div className="app-section-info">
-          (click anywhere to place codi)
+          (click anywhere to place kodi)
         </div>
         <div className="flex space-x-4">
           <a href='https://www.twitch.tv/yazmyn' target="_blank" rel="noopener noreferrer">
