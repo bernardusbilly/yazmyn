@@ -70,6 +70,15 @@ function App() {
             <i class="fa-brands fa-tiktok"></i>
           </a>
         </div>
+        <div className='app-section-sponsors'>
+          <div>
+            Our Sponsors:
+          </div>
+          <div>
+            <img className="app-section-sponsors-sponsor" src={`${process.env.PUBLIC_URL}/sponsors/nord-vpn.png`} />
+            <img className="app-section-sponsors-sponsor" src={`${process.env.PUBLIC_URL}/sponsors/waterdrop.png`} />
+          </div>
+        </div>
       </div>
     </div>
   );

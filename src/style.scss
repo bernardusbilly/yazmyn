@@ -186,6 +186,30 @@ body {
         }
       }
     }
+
+    &-sponsors {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: end;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+
+      &-title {
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      &-sponsor {
+        width: 150px;
+      }
+
+      img {
+        padding: 10px;
+        display: inline-block;
+      }
+    }
   }
 
   &-footer {
